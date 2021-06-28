@@ -1,24 +1,23 @@
 import logo from './logo.svg'
+import GlobalStyle from './theme/GlobalStyle'
+import WebSiteGlobalProvider from './components/WebSiteWrapper/provider'
+import Home from './pages/Home'
 
-function App() {
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <WebSiteGlobalProvider>
+    <GlobalStyle />
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+        </header>
+        <Home />
+      </div>
+  </WebSiteGlobalProvider>
+  )
 }
 
-export default App;
+export default App
