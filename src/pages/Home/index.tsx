@@ -1,22 +1,38 @@
-import { useContext } from 'react'
-import Button from '../../components/foundation/Button'
 import { Box } from '../../components/foundation/layout/Box'
-import { ModeContext } from '../../components/WebSiteWrapper/provider'
-import Text from '../../components/foundation/Text'
+import { Grid } from '../../components/foundation/layout/Grid'
+import Menu from '../../components/Menu'
+import { products } from '../../components/Products'
+import { ListStyle } from './styles'
 
 export default function Home () {
-  const modeChange = useContext(ModeContext)
   return (
-    <Box>
-      <Button
-        onClick={
-          () => modeChange.toggleModeContext()
-        }>
-          Troca
-      </Button>
-        <Text>
-          Batata
-        </Text>
+    <Box
+      display='flex'
+      flex='1'
+      flexDirection='column'
+      flexWrap='wrap'
+      justifyContent='space-between'
+    >
+      <Menu />
+      <Grid.Container>
+
+        <ListStyle>
+          {products.map((produto) => {
+            return (
+              <li key={produto.id}>
+                <img
+                width='100px'
+                height='100px'
+                src={require(`../../images/${produto.image}`).default}
+                alt={produto.name}
+              />
+              </li>
+            )
+          })}
+        </ListStyle>
+
+      </Grid.Container>
+
     </Box>
   )
 }

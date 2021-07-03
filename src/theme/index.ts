@@ -6,10 +6,10 @@ export const dark = {
 
   colors: {
     text: '#fafdf6',
-    primary: '#eeefa8',
-    secundary: '#ddd92a',
+    primary: '#D61616',
+    secundary: '#FCFCFC',
 
-    background: '#2d2a32'
+    background: '#0A0A0A'
   },
 
   breakpoints,
@@ -21,11 +21,11 @@ export const light = {
   title: 'light',
 
   colors: {
-    text: '#fffded',
-    primary: '#ffb17a',
-    secundary: '#fce762',
+    text: '#211B1B',
+    primary: '#3D42D4',
+    secundary: '#FCFCFC',
 
-    background: '#4f4789'
+    background: '#F0EEED'
   },
 
   breakpoints,
