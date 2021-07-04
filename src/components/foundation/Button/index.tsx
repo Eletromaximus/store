@@ -16,6 +16,7 @@ interface IButton {
   name?: string;
   color?: string;
   width?: string;
+  style?: object;
 }
 
 const ButtonBase = styled.button<IButton>`
@@ -27,7 +28,7 @@ const ButtonBase = styled.button<IButton>`
   ${propToStyle('padding')};
   ${propToStyle('width')};
 
-  color: ${({ theme }) => theme.colors.text};
+  // color: ${({ theme }) => theme.colors.secundary};
   background-color: transparent;
   border: none;
 `

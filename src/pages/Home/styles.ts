@@ -1,19 +1,21 @@
 import styled from 'styled-components'
 
 export const ListStyle = styled.ul`
-  padding: 0;
-  margin: 0;
   display: flex;
+  flex-direction: row;
   list-style: none;
   flex-wrap: wrap;
+  padding: 0;
 
   li {
-    width: 100px;
-    height: 100px;
-    margin-right: 10px;
+    padding: 0%;
+    width: auto;
+    margin: 20px 10px 0 0;
   }
+`
 
-  /* li {
-
-  } */
+export const Banner = styled.div`
+  width: 100%;
+  height: 400px;
+  background-color: ${({ theme }) => theme.colors.secundary};
 `

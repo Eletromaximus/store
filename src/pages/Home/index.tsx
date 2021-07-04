@@ -1,8 +1,9 @@
 import { Box } from '../../components/foundation/layout/Box'
 import { Grid } from '../../components/foundation/layout/Grid'
 import Menu from '../../components/Menu'
+import { ListStyle, Banner } from './styles'
+import Card from '../../components/Card'
 import { products } from '../../components/Products'
-import { ListStyle } from './styles'
 
 export default function Home () {
   return (
@@ -14,25 +15,28 @@ export default function Home () {
       justifyContent='space-between'
     >
       <Menu />
-      <Grid.Container>
-
-        <ListStyle>
-          {products.map((produto) => {
-            return (
-              <li key={produto.id}>
-                <img
-                width='100px'
-                height='100px'
-                src={require(`../../images/${produto.image}`).default}
-                alt={produto.name}
-              />
-              </li>
-            )
-          })}
-        </ListStyle>
-
-      </Grid.Container>
-
+      <Banner>
+          Banner
+      </Banner>
+        <Grid.Col
+          value={{
+            md: 10
+          }}
+          offset={{
+            md: 2
+          }}
+          padding='0'
+        >
+          <ListStyle>
+            {products.map((produto) => {
+              return (
+                <li key={produto.id}>
+                  <Card product={produto} />
+                </li>
+              )
+            })}
+          </ListStyle>
+        </Grid.Col>
     </Box>
   )
 }

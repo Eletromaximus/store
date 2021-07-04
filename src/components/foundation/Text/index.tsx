@@ -11,7 +11,10 @@ interface Props {
   color?: string;
   name?: string;
   href?: string | object;
+  padding?: string | object;
+  margin?: string | object;
   paddingRight?: string | object;
+  paddingLeft?: string | object;
   marginBottom?: string | object;
 }
 
@@ -24,6 +27,11 @@ const paragraph1 = css`
   font-size: ${() => typographyVariants.paragraph1.fontSize};
   font-weight: ${() => typographyVariants.paragraph1.fontWeight};
   line-height: ${() => typographyVariants.paragraph1.lineHeight};
+`
+const paragraph2 = css`
+  font-size: ${() => typographyVariants.paragraph2.fontSize};
+  font-weight: ${() => typographyVariants.paragraph2.fontWeight};
+  line-height: ${() => typographyVariants.paragraph2.lineHeight};
 `
 const title = css`
   font-size: ${() => typographyVariants.title.fontSize};
@@ -44,6 +52,7 @@ const navbar = css`
 export const TextStyleVariants: Record<string, any> = {
   smallestException,
   paragraph1,
+  paragraph2,
   title,
   subtitle,
   navbar
@@ -52,8 +61,11 @@ export const TextStyleVariants: Record<string, any> = {
 const TextBase = styled.span<Props>`
   ${({ variant }) => TextStyleVariants[variant]}
   ${propToStyle('color')}
+  ${propToStyle('margin')}
   ${propToStyle('marginBottom')}
+  ${propToStyle('padding')}
   ${propToStyle('paddingRight')}
+  ${propToStyle('paddingLeft')}
 `
 // ;
 export default function Text ({ variant, tag, children, ...props }: Props) {

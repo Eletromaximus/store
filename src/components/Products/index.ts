@@ -1,10 +1,9 @@
-
 interface IProducts {
-  'id': number,
-  'name': string,
-  'price': number,
-  'score': number,
-  'image': string
+  id: number,
+  name: string,
+  price: number,
+  score: number,
+  image: string
 }
 export const products: IProducts[] = [
   {
