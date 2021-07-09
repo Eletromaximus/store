@@ -7,15 +7,15 @@ export const ModeContext = createContext({
 })
 
 export default function WebSiteGlobalProvider ({ children }: any) {
-  const [x, setX] = useTheme()
+  const [thema, setThema] = useTheme()
 
   return (
     <ModeContext.Provider value={{
       toggleModeContext: () => {
-        setX()
+        setThema()
       }
     }}>
-      <ThemeProvider theme={x}>
+      <ThemeProvider theme={thema}>
         {children}
       </ThemeProvider>
     </ModeContext.Provider>
