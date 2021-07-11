@@ -10,7 +10,7 @@ export const ListStyle = styled.ul`
   li {
     padding: 0%;
     width: auto;
-    margin: 20px 10px 0 0;
+    margin: 20px 20px 0 0;
   }
 `
 export const Navbar = styled.div`

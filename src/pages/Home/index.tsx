@@ -25,7 +25,7 @@ export default function Home () {
             md: 10
           }}
           offset={{
-            md: 2
+            md: 1
           }}
           padding='0'
         >
