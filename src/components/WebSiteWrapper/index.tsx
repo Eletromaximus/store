@@ -4,7 +4,7 @@ import Menu from '../Menu'
 
 interface IWebSiteWrapper {
   children: React.ReactNode,
-  menuProps: boolean
+  menuProps?: boolean
 }
 
 export default function WebSitePageWrapper ({
@@ -13,11 +13,9 @@ export default function WebSitePageWrapper ({
 }: IWebSiteWrapper) {
   return (
     <Box
-      display='flex'
-      flex='1'
-      flexDirection='column'
-      flexWrap='wrap'
-      justifyContent='space-between'
+    display='flex'
+    flex='1'
+    flexDirection='column'
     >
       { menuProps && <Menu />}
       {children}
@@ -25,6 +23,6 @@ export default function WebSitePageWrapper ({
   )
 }
 
-WebSitePageWrapper.defaulProps = {
-  menuProps: true
-}
+// WebSitePageWrapper.defaulProps = {
+//   menuProps: true
+// }

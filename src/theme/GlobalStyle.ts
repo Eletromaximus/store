@@ -6,7 +6,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   ${normalize}
-  html,
   body {
     display: flex;
     min-height: 100vh;
@@ -18,14 +17,10 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.text};
     background-color: ${({ theme }) => theme.colors.background};
     text-decoration: none;
+  
+    div {
+      width: 100%;
+    }
   }
-  /* Full height layout */
-
 `
-
 export default GlobalStyle
-/* html, body {
-    display: flex;
-    min-height: 100vh;
-    width: 100%;
-  } */

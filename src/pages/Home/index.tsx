@@ -1,27 +1,25 @@
-import { Box } from '../../components/foundation/layout/Box'
+// import { Box } from '../../components/foundation/layout/Box'
 import { Grid } from '../../components/foundation/layout/Grid'
-import Menu from '../../components/Menu'
+// import Menu from '../../components/Menu'
 import { Banner, ListStyle, Navbar } from './styles'
-import { products } from '../../components/Products'
+import { IProducts, products } from '../../components/Products'
 import Button from '../../components/foundation/Button'
 import useOrder from '../../hooks/useOrder'
-// import WebSitePageWrapper from '../../components/WebSiteWrapper'
+import Card from '../../components/Card'
+import WebSitePageWrapper from '../../components/WebSiteWrapper'
 
 export default function Home () {
   const [items, setItems] = useOrder(products)
 
   return (
-    <Box
-      display='flex'
-      flex='1'
-      flexDirection='column'
-      flexWrap='wrap'
-      justifyContent='space-between'
+    <WebSitePageWrapper
+      menuProps={true}
     >
-      <Menu />
+
       <Banner>
           Banner
       </Banner>
+
         <Grid.Col
           value={{
             md: 10
@@ -66,10 +64,15 @@ export default function Home () {
           </Navbar>
 
           <ListStyle>
-            {items}
+            {items && items.map((item: IProducts) => {
+              return <li key={item.id}>
+                <Card product={item} />
+              </li>
+            })}
           </ListStyle>
 
         </Grid.Col>
-    </Box>
+
+    </WebSitePageWrapper>
   )
 }
