@@ -2,7 +2,7 @@
 import { Grid } from '../../components/foundation/layout/Grid'
 // import Menu from '../../components/Menu'
 import { Banner, ListStyle, Navbar } from './styles'
-import { IProducts, products } from '../../components/Products'
+import { IProduct, products } from '../../components/Products'
 import Button from '../../components/foundation/Button'
 import useOrder from '../../hooks/useOrder'
 import Card from '../../components/Card'
@@ -64,7 +64,7 @@ export default function Home () {
           </Navbar>
 
           <ListStyle>
-            {items && items.map((item: IProducts) => {
+            {items && items.map((item: IProduct) => {
               return <li key={item.id}>
                 <Card product={item} />
               </li>

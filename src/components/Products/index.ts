@@ -1,11 +1,6 @@
-export interface IProducts {
-  id: number,
-  name: string,
-  price: number,
-  score: number,
-  image: string
-}
-export const products: IProducts[] = [
+import { IProduct } from '../../types'
+
+export const products: IProduct[] = [
   {
     id: 312,
     name: 'Super Mario Odyssey',
